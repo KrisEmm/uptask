@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    include partials/header
+  body.login
+    .contenedor-formulario
+      h1= nombrePagina
+      p Agregar tu E-mail para reestablecer tu contraseña
+
+      if locals.mensajes
+        .alertas
+          each categoria in Object.keys(locals.mensajes)
+            each error in mensajes[categoria]
+              .alerta(class=`${categoria}`)
+                p.error.alerta= error
+
+      form.caja-login(action='/reestablecer' method='POST')
+        .campo
+          label(for='email') E-mail:
+          input(type="email" name='email' placeholder='Ingresa tu cuenta de E-mail' value= email)
+        .campo.enviar
+          input.boton(type='submit' value='Reestablecer Password')
+        .campo.acciones
+          a(href="/iniciar-sesion") Iniciar Sesion
