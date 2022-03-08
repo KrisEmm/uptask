@@ -26,7 +26,7 @@ This is a project is a task manager is developed in nodejs and express.
 
 ##### `docker-compose up -d`
 
-##### `docker logs --follow container`
+##### `docker logs --follow uptask-app`
 * Wait to database is connected
 
 ##### `visit into browser http:\\localhost:3000/`
